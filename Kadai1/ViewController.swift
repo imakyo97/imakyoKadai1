@@ -39,12 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func totalButton(_ sender: Any) {
         
-        let num1 = num(textField1.text)
-        let num2 = num(textField2.text)
-        let num3 = num(textField3.text)
-        let num4 = num(textField4.text)
-        let num5 = num(textField5.text)
-        total = num1 + num2 + num3 + num4 + num5
+        total = num(textField1.text) + num(textField2.text) + num(textField3.text) + num(textField4.text) + num(textField5.text)
         label.text = String(total)
     }
     
