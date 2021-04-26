@@ -9,38 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet private weak var textField1: UITextField!
     
-    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet private weak var textField2: UITextField!
     
-    @IBOutlet weak var textField2: UITextField!
+    @IBOutlet private weak var textField3: UITextField!
     
-    @IBOutlet weak var textField3: UITextField!
+    @IBOutlet private weak var textField4: UITextField!
     
-    @IBOutlet weak var textField4: UITextField!
+    @IBOutlet private weak var textField5: UITextField!
     
-    @IBOutlet weak var textField5: UITextField!
+    @IBOutlet private weak var label: UILabel!
     
-    @IBOutlet weak var label: UILabel!
-    
-    var total = 0
-    
-    func num(_ textNum:String?) -> Int {
-        var num = 0
+    private func num(_ textNum: String?) -> Int {
         if let textToNum = textNum {
-            num = Int(textToNum) ?? 0
+            return Int(textToNum) ?? 0
+        } else {
+            return 0
         }
-        return num
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func totalButton(_ sender: Any) {
-        
-        total = num(textField1.text) + num(textField2.text) + num(textField3.text) + num(textField4.text) + num(textField5.text)
+        let total = num(textField1.text) + num(textField2.text) + num(textField3.text) + num(textField4.text) + num(textField5.text)
         label.text = String(total)
     }
-    
 }
